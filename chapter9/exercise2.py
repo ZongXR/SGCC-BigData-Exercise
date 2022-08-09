@@ -18,7 +18,7 @@ def read_txt(path: str, separate: str) -> [[str]]:
 
 if __name__ == '__main__':
     # 1
-    df5 = pd.read_csv("./data1.txt", delimiter='\t', names=["header"])
+    df5 = pd.read_csv("./9.1/data1.txt", delimiter='\t', names=["header"])
     print(df5)
     # 2
-    print(read_txt("./data2.txt", separate="/$/"))
+    print(read_txt("./9.1/data2.txt", separate="/$/"))

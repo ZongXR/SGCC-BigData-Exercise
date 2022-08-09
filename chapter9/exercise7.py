@@ -4,7 +4,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     # 1
-    df = pd.read_csv("./example.csv")
+    df = pd.read_csv("./9.2/example.csv")
     df1 = df.drop_duplicates()
     print(df1)
     # 2

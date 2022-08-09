@@ -4,7 +4,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     # 1
-    df = pd.read_csv("./example.csv")
+    df = pd.read_csv("./9.2/example.csv")
     df["Salary"] = (df["Salary"] - df["Salary"].min()) / (df["Salary"].max() - df["Salary"].min())
     print(df)
     # 2

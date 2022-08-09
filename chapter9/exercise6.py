@@ -5,7 +5,7 @@ import pandas as pd
 
 if __name__ == '__main__':
     # 1
-    df = pd.read_csv("./data.csv", encoding="utf-8")
+    df = pd.read_csv("./9.2/data.csv", encoding="utf-8")
     mask = (df < df.mean(axis=0) - 3 * df.std(axis=0)) | (df > df.mean(axis=0) + 3 * df.std(axis=0))
     print(df.index[mask["f1"]])
     print(df.index[mask["f2"]])
