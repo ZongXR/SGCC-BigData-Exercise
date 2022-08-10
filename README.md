@@ -13,7 +13,4 @@
 <tr>
 <td>368</td><td>第8章</td><td>11.数据集</td><td>load_boston</td>
 </tr>
-<tr>
-<td>369</td><td>第8章</td><td>13.pearsonr相关系数只适用于回归问题？</td><td>use SelectKBest default score_func "f_classif"</td>
-</tr>
 </table>
