@@ -13,4 +13,7 @@
 <tr>
 <td>368</td><td>第8章</td><td>11.数据集</td><td>load_boston</td>
 </tr>
+<tr>
+<td>372</td><td>第8章</td><td>18</td><td>缺少数据集</td>
+</tr>
 </table>
