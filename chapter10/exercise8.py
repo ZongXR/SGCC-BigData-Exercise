@@ -17,6 +17,7 @@ if __name__ == '__main__':
     result["median"] = data["load"].median()
     print(result)
     # 2
+    labels = ["低", "正常", "高", "严重", "异常"]
     level = pd.cut(data["load"], [
         0,
         data["load"].mean() - data["load"].std(),
@@ -24,7 +25,7 @@ if __name__ == '__main__':
         data["load"].mean() + 2 * data["load"].std(),
         data["load"].mean() + 3 * data["load"].std(),
         np.inf
-    ], labels=["低", "正常", "高", "严重", "异常"])
+    ], labels=labels, include_lowest=True)
     data["level"] = level.astype(str).apply(lambda xx: np.nan if xx == "nan" else xx)
     print(data)
     plt.figure()
@@ -40,14 +41,12 @@ if __name__ == '__main__':
     ], ymin=0, ymax=0.006, linestyles=":")
     plt.show()
     # 3
-    r3 = data["level"].value_counts()
-    r3["严重"] = 0
-    r3["异常"] = 0
+    r3 = data["level"].value_counts().reindex(labels).fillna(0)
     result3 = pd.DataFrame({
         "百分比": r3,
         "参考值": [0] * r3.shape[0]
     })
-    result3 = result3.reindex(index=["低", "正常", "高", "严重", "异常"])
+    result3 = result3.reindex(index=labels)
     result3.loc["低", "参考值"] = norm.cdf(data["load"].mean() - data["load"].std(), loc=data["load"].mean(), scale=data["load"].std()) - norm.cdf(0, loc=data["load"].mean(), scale=data["load"].std())
     result3.loc["正常", "参考值"] = norm.cdf(data["load"].mean() + data["load"].std(), loc=data["load"].mean(), scale=data["load"].std()) - norm.cdf(data["load"].mean() - data["load"].std(), loc=data["load"].mean(), scale=data["load"].std())
     result3.loc["高", "参考值"] = norm.cdf(data["load"].mean() + 2 * data["load"].std(), loc=data["load"].mean(), scale=data["load"].std()) - norm.cdf(data["load"].mean() + data["load"].std(), loc=data["load"].mean(), scale=data["load"].std())

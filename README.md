@@ -22,4 +22,7 @@
 <tr>
 <td>380</td><td>第9章</td><td>5.(2)(3)(4)</td><td>axis参数疑似有误</td>
 </tr>
+<tr>
+<td>383</td><td>第9章</td><td>8</td><td>题目和答案的数据集不一致</td>
+</tr>
 </table>
