@@ -16,4 +16,10 @@
 <tr>
 <td>372</td><td>第8章</td><td>18</td><td>缺少数据集</td>
 </tr>
+<tr>
+<td>379</td><td>第9章</td><td>4.(2)(3)(4)</td><td>axis参数疑似有误</td>
+</tr>
+<tr>
+<td>380</td><td>第9章</td><td>5.(2)(3)(4)</td><td>axis参数疑似有误</td>
+</tr>
 </table>
