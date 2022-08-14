@@ -31,4 +31,7 @@
 <tr>
 <td>405</td><td>第10章</td><td>10</td><td>LabelEncoder不是one-hot</td>
 </tr>
+<tr>
+<td>408</td><td>第10章</td><td>11</td><td>题目给的x和y长度不一样</td>
+</tr>
 </table>
