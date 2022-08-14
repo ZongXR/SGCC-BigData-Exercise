@@ -28,4 +28,7 @@
 <tr>
 <td>392</td><td>第10章</td><td>5</td><td>题目要求分类，答案给的回归</td>
 </tr>
+<tr>
+<td>405</td><td>第10章</td><td>10</td><td>LabelEncoder不是one-hot</td>
+</tr>
 </table>
