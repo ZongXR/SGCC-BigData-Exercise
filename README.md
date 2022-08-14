@@ -23,18 +23,21 @@
 <td>380</td><td>第9章</td><td>5.(2)(3)(4)</td><td>axis参数疑似有误</td>
 </tr>
 <tr>
-<td>383</td><td>第9章</td><td>8</td><td>题目和答案的数据集不一致</td>
+<td>383</td><td>第9章</td><td>8(1)</td><td>题目和答案的数据集不一致</td>
 </tr>
 <tr>
 <td>392</td><td>第10章</td><td>5</td><td>题目要求分类，答案给的回归</td>
 </tr>
 <tr>
-<td>405</td><td>第10章</td><td>10</td><td>LabelEncoder不是one-hot</td>
+<td>405</td><td>第10章</td><td>10(1)</td><td>LabelEncoder不是one-hot</td>
 </tr>
 <tr>
 <td>408</td><td>第10章</td><td>11</td><td>题目给的x和y长度不一样</td>
 </tr>
 <tr>
 <td>418</td><td>第10章</td><td>14(2)</td><td>题目要求gridfaults_weather_analysis_error.csv文件，答案读取gridfaults_weather_analysis_train_label.csv文件</td>
+</tr>
+<tr>
+<td>421</td><td>第10章</td><td>15(3)</td><td>前180天是从2018/1/1至2018/6/29，前181天是从2018/1/1至2018/6/30;<br />scipy.stats.variation是变异系数，并非方差，也不是MSE</td>
 </tr>
 </table>
