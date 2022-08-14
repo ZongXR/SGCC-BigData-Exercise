@@ -34,4 +34,7 @@
 <tr>
 <td>408</td><td>第10章</td><td>11</td><td>题目给的x和y长度不一样</td>
 </tr>
+<tr>
+<td>418</td><td>第10章</td><td>14(2)</td><td>题目要求gridfaults_weather_analysis_error.csv文件，答案读取gridfaults_weather_analysis_train_label.csv文件</td>
+</tr>
 </table>
