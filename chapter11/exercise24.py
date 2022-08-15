@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
+from orangecontrib.associate.fpgrowth import frequent_itemsets, association_rules
 
 
 def get_codes(xx: pd.Series, _encoder: dict) -> [int]:
@@ -39,5 +40,11 @@ if __name__ == '__main__':
     # 5
     encoder = {k: v for k, v in zip(data.columns, range(len(data.columns)))}
     decoder = {v: k for k, v in encoder.items()}
-    for i in range(data.shape[0]):
-        print(get_codes(data.iloc[i], encoder))
+    codes = [get_codes(data.iloc[i], encoder) for i in range(data.shape[0])]
+    [print(code) for code in codes]
+    # 6
+    itemsets = dict(frequent_itemsets(codes, min_support=0.2))
+    for reason, result, support, confidence in association_rules(itemsets, min_confidence=0.9):
+        if len(result) == 1 and "逾期" in decoder[list(result)[0]]:
+            print(", ".join(list(map(lambda xx: decoder[xx], reason))), "->", decoder[list(result)[0]], "支持度:%d, 置信度:%f" % (support, confidence))
+
