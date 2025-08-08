@@ -132,7 +132,7 @@ dmypy.json
 
 **.iml
 
-chapter11/分类2 - 窃电用户特征及预测分析/stolen_electric_analysis_1.csv
+chapter10/分类2 - 窃电用户特征及预测分析/stolen_electric_analysis_1.csv
 chapter12/1-1.csv
 chapter12/1-1.png
 chapter12/1-2.csv
@@ -146,3 +146,4 @@ chapter12/2-3.csv
 chapter12/2-4.csv
 chapter12/2-2.png
 chapter12/2-5.csv
+chapter12/3-1.csv

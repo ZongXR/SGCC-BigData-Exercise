@@ -1,15 +1,19 @@
 # -*- coding: utf-8 -*-
-import pandas as pd
+import numpy as np
 
 
 if __name__ == '__main__':
+    a = np.array([
+        [1, 2, 3, 4],
+        [5, 6, 7, 25],
+        [3, 4, 5, 6],
+        [4, 5, 6, 11]
+    ])
     # 1
-    df1 = pd.read_csv("./9.2/data.csv", encoding="utf-8")
-    print(df1.isnull().sum(axis=0).astype(bool))
+    print(a.mean(), np.median(a))
     # 2
-    df10 = df1.copy()
-    df10.dropna(axis=0, inplace=True)
-    print(df10)
+    print(a.var(axis=1))
     # 3
-    df1.fillna(df1.mean(axis=0), inplace=True)
-    print(df1)
+    print(a.std(axis=0))
+    # 4
+    print(a.cumsum(axis=1))

@@ -1,14 +1,26 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
+from scipy.stats import pearsonr
+
+
+def get_pearsonr(x: pd.DataFrame) -> float:
+    """
+    计算相关系数\n
+    :param x: 输入数据
+    :return: 相关系数
+    """
+    return pearsonr(x["最大负荷"], x["最高温度"])[0]
 
 
 if __name__ == '__main__':
-    num1 = [3, 60, 50, 43, 70, 52, 26, 37, 0, 80, 56, 77, 35, 67, 100]
     # 1
-    r1, b1 = pd.cut(num1, bins=[0, 30, 60, 90, 100], labels=["组1", "组2", "组3", "组4"], include_lowest=True, retbins=True)
-    print(r1.tolist())
-    print(b1)
+    data = pd.read_csv("./weather_load.csv", index_col="日期")
     # 2
-    r2, b2 = pd.qcut(num1, 5, labels=["组1", "组2", "组3", "组4", "组5"], retbins=True)
-    print(r2.tolist())
-    print(b2)
+    data.index = pd.to_datetime(data.index)
+    # 3
+    data["季度"] = data.index
+    data["季度"] = data["季度"].apply(lambda x: x.quarter)
+    # 4
+    quarter_pearsonr = data[["季度", "最大负荷", "最高温度"]].groupby("季度").apply(lambda x: get_pearsonr(x))
+    quarter_pearsonr = quarter_pearsonr.sort_values(ascending=False)
+    print(quarter_pearsonr)
